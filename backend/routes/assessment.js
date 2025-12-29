@@ -4,9 +4,9 @@ const User = require("../models/User");
 const Question = require("../models/Question");
 const { generateRoadmap, generateStudySuggestion } = require("../services/aiService");
 
-/* ===============================
-   SKILL → ROADMAP
-================================ */
+
+   //SKILL → ROADMAP
+
 r.post("/submit", auth, async (req, res) => {
   try {
     const { skills } = req.body;
@@ -46,9 +46,9 @@ r.post("/submit", auth, async (req, res) => {
   }
 });
 
-/* ===============================
-   MCQ SUBMIT + AI SUGGESTION
-================================ */
+
+  // MCQ SUBMIT + AI SUGGESTION
+
 r.post("/mcq-submit", auth, async (req, res) => {
   try {
     const { answers } = req.body;
