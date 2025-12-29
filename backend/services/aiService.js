@@ -1,8 +1,7 @@
 const OpenAI = require("openai");
 
-/* ===============================
-   RULE BASED ROADMAP
-================================ */
+//   RULE BASED ROADMAP
+
 const ruleBasedRoadmap = (skills) => {
   let r = [];
 
@@ -16,9 +15,9 @@ const ruleBasedRoadmap = (skills) => {
   return r;
 };
 
-/* ===============================
-   OPENAI ROADMAP
-================================ */
+
+//   OPENAI ROADMAP
+
 const openAIRoadmap = async (skills) => {
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -47,9 +46,9 @@ Example:
   }
 };
 
-/* ===============================
-   AI STUDY SUGGESTION (NEW)
-================================ */
+
+//   AI STUDY SUGGESTION (NEW)
+
 const generateStudySuggestion = (skills) => {
   const map = {
     beginner: [
