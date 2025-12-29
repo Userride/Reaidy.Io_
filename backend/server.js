@@ -9,9 +9,7 @@ const User = require("./models/User");
 
 const app = express();
 
-/* ===============================
-   SECURITY & MIDDLEWARE
-================================ */
+  // SECURITY & MIDDLEWARE
 
 // Security headers
 app.use(helmet());
@@ -22,9 +20,9 @@ app.use(express.json());
 // 🔥 CORS OPEN (Frontend abhi deploy nahi hai)
 app.use(cors());
 
-/* ===============================
-   MONGODB CONNECTION
-================================ */
+
+ //  MONGODB CONNECTION
+
 
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -33,9 +31,9 @@ mongoose
     console.error("❌ MongoDB Error:", err.message)
   );
 
-/* ===============================
-   DEMO USER SEED (DEV ONLY)
-================================ */
+
+//   DEMO USER SEED (DEV ONLY)
+
 
 async function seedDemoUser() {
   try {
@@ -73,17 +71,16 @@ if (process.env.NODE_ENV !== "production") {
   seedDemoUser();
 }
 
-/* ===============================
-   ROUTES
-================================ */
+
+ //  ROUTES
+
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/assessment", require("./routes/assessment"));
 app.use("/api/questions", require("./routes/questions"));
 
-/* ===============================
-   HEALTH CHECK
-================================ */
+//   HEALTH CHECK
+
 
 app.get("/api/health", (req, res) => {
   res.json({
@@ -93,9 +90,9 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-/* ===============================
-   SERVER START
-================================ */
+
+//   SERVER START
+
 
 const PORT = process.env.PORT || 5000;
 
